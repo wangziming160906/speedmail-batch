@@ -1,0 +1,89 @@
+scp -i /home/ec2-user/pem/liuyanyan.pem /home/ec2-user/java/*.gz ec2-user@34.216.72.164:/home/ec2-user/java/
+scp -i /home/ec2-user/pem/liuyanyan.pem /home/ec2-user/application/sendemail/*.jar ec2-user@34.216.72.164:/home/ec2-user/application/sendemail/
+scp -i /home/ec2-user/pem/liuyanyan-aliyun.pem /home/ec2-user/application/sendemail/*.jar ec2-user@54.241.129.189:/home/ec2-user/application/sendemail/
+
+export JAVA_HOME=/home/ec2-user/java/jdk1.8.0_191
+export JRE_HOME=$JAVA_HOME/jre
+export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib
+export PATH=$JAVA_HOME/bin:$PATH
+
+
+scp -i /home/wangshuai/liuyanyan.pem /mnt/d/4-Aws/jdk-8u191-linux-i586.tar.gz ec2-user@54.241.129.189:/home/ec2-user/java/
+scp -i /home/wangshuai/liuyanyan.pem /mnt/d/4-Aws/jdk-8u191-linux-x64.tar.gz ec2-user@54.241.129.189:/home/ec2-user/java/
+
+
+---------------------------正在使用7个------------------------------
+ssh -i /home/wangshuai/aliyun-new.pem ec2-user@52.15.227.136
+aws用户:wangshuaiws820716@aliyun.com   主
+
+ssh -i /home/wangshuai/2016122419.pem ec2-user@13.57.207.199
+aws用户:2016122419@hhit.edu.cn  2019.3.2
+
+ssh -i /home/wangshuai/wangziming160906.pem ec2-user@54.153.10.253
+aws用户:wangziming160906@aliyun.com  2019.3.2
+
+ssh -i /home/wangshuai/hao062581840.pem ec2-user@3.134.243.31
+aws用户:hao062581840@163.com  2019.12
+
+ssh -i wangshuaiziming.pem  ec2-user@18.225.32.41
+aws用户:wangshuaiziming@aliyun.com  2020.3.5
+
+ssh -i githubwangshuai.pem ec2-user@3.19.228.198
+aws用户:githubwangshuai@aliyun.com  2020.3.5
+
+ssh -i deng8414174.pem ec2-user@54.153.92.77
+aws用户:deng8414174@163.com 2020.3.6
+
+
+----------------------------------已停用----------------------------
+ssh -i /home/wangshuai/liuyanyan-new.pem ec2-user@52.53.182.3
+aws用户:liuyanyanlyy@163.com   2018.11.15号注册   已停用
+
+ssh -i /home/wangshuai/liuyanyan-aliyun.pem ec2-user@54.241.129.189
+aws用户:liuyanyanlyy@aliyun.com  2019.1.12 已欠费 25.56 已停用
+
+ssh -i /home/wangshuai/2016120225.pem ec2-user@13.57.186.197
+aws用户:2016120225@hhit.edu.cn  2019.1.19 已欠费 25.56 已停用
+
+ssh -i /home/wangshuai/2016122621.pem ec2-user@13.56.180.113
+aws用户:2016122621@hhit.edu.cn 2019.1.19 已欠费 25.56 已停用
+
+
+ssh -i /home/wangshuai/bosun-new.pem ec2-user@54.241.129.189 已停用
+
+ssh -i /home/wangshuai/aliyun.pem ec2-user@54.245.220.182
+aws用户:wangshuaiws0716@aliyun.com  已停用
+-----------------------------------------------------------------------
+
+
+nohup java -jar /home/ec2-user/application/sendemail/email-auto-sendemailsingle-20181202-1.0.0.jar > /home/ec2-user/application/log/sendemail.log 2>&1 &
+nohup java -jar /home/ec2-user/application/sendbatch/email-auto-sendemaibatch-20181129-1.0.0.jar > /home/ec2-user/application/log/sendbatch.log 2>&1 &
+
+scp -i /home/wangshuai/liuyanyan-aliyun.pem /home/wangshuai/liuyanyan-aliyun.pem ec2-user@54.241.129.189:/home/ec2-user/pem
+
+scp -i /home/ec2-user/pem/liuyanyan-new.pem /home/ec2-user/java/jdk-8u191-linux-x64.tar.gz ec2-user@52.53.182.3:/home/ec2-user/java/
+scp -i /home/ec2-user/pem/liuyanyan-new.pem /home/ec2-user/java/jdk-8u191-linux-i586.tar.gz ec2-user@52.53.182.3:/home/ec2-user/java/
+scp -i /home/ec2-user/pem/liuyanyan-new.pem /home/ec2-user/application/sendemail/email-auto-sendemailsingle-20181202-1.0.0.jar ec2-user@52.53.182.3:/home/ec2-user/application/sendemail/
+scp -i /home/wangshuai/liuyanyan-aliyun.pem /home/wangshuai/2016120225.pem ec2-user@54.241.129.189:/home/ec2-user/pem
+
+scp -i /home/wangshuai/liuyanyan-aliyun.pem /home/wangshuai/wangziming160906.pem ec2-user@54.241.129.189:/home/ec2-user/pem
+
+scp -i /home/ec2-user/pem/2016122419.pem /home/ec2-user/java/jdk-8u191-linux-x64.tar.gz ec2-user@13.57.250.233:/home/ec2-user/java/
+scp -i /home/ec2-user/pem/2016122419.pem /home/ec2-user/application/sendemail/email-auto-sendemailsingle-20181202-1.0.0.jar ec2-user@13.57.250.233:/home/ec2-user/application/sendemail
+
+scp -i /home/ec2-user/pem/wangziming160906.pem /home/ec2-user/java/jdk-8u191-linux-x64.tar.gz ec2-user@54.153.10.253:/home/ec2-user/java/
+scp -i /home/ec2-user/pem/wangziming160906.pem /home/ec2-user/application/sendemail/email-auto-sendemailsingle-20181202-1.0.0.jar ec2-user@54.153.10.253:/home/ec2-user/application/sendemail
+
+scp -i /home/wangshuai/liuyanyan-aliyun.pem /home/wangshuai/2016122621.pem ec2-user@54.241.129.189:/home/ec2-user/pem
+
+scp -i /home/wangshuai/aliyun.pem /mnt/d/4-Aws/email-auto-sendemaibatch-20190207-1.0.0.jar ec2-user@54.188.49.50:/home/ec2-user/application/sendbatch
+
+
+scp -i /home/wangshuai/aliyun.pem /mnt/d/4-Aws/email-auto-sendemaibatch-20190207-1.0.0.jar ec2-user@54.188.49.50:/home/ec2-user/application/sendbatch
+
+nohup java -jar /home/ec2-user/application/web/email-auto-web-20190203-1.0.0.jar > /home/ec2-user/application/log/web.log 2>&1 &
+
+nohup java -jar /home/ec2-user/application/sendbatch/email-auto-sendemaibatch-20190207-1.0.0.jar > /home/ec2-user/application/log/sendbatch.log 2>&1 &
+
+
+yan0070060@163.com----jiyue6393   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

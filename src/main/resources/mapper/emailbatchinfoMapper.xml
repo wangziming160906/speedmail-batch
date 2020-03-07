@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.speedmailbatch.EmailBatchInfoDao">
+    <resultMap id="emailbatchinfobean" type="com.speedmailbatch.EmailBatchInfoBean">
+        <result column="EMAIL_BATCH" property="email_batch" />
+        <result column="EMAIL_BATCH_DES" property="email_batch_des" />
+        <result column="EMAIL_BATCH_DATE" property="email_batch_date" />
+        <result column="EMAIL_BATCH_NUM" property="email_batch_num" />
+        <result column="EMAIL_BATCH_COUNT" property="email_batch_count" />
+        <result column="EMAIL_VALIDATE_SUCC_COUNT" property="email_validate_succ_count" />
+        <result column="EMAIL_VALIDATE_FAIL_COUNT" property="email_validate_fail_count" />
+        <result column="EMAIL_SEND_SUCC_COUNT" property="email_send_succ_count" />
+        <result column="EMAIL_SEND_FAIL_COUNT" property="email_send_fail_count" />
+        <result column="EMAIL_BATCH_STATUS" property="email_batch_status" />
+        <result column="PLAN_DATE" property="email_batch_work_date" />
+        <result column="WORK_STATUS" property="email_batch_work_status" />
+        <result column="PRIORITY" property="priority" />
+
+    </resultMap>
+
+    <!--目的：为Dao接口方法提供SQL语句-->
+    <select id="getEmailBatchinfoList"  resultMap="emailbatchinfobean" >
+        SELECT *
+          FROM EMAILS_BATCH_INFO
+        WHERE 1=1
+            <if test="emailBatchInfoBean.email_batch!=null and emailBatchInfoBean.email_batch!='' ">
+                AND EMAIL_BATCH = #{emailBatchInfoBean.email_batch}
+            </if>
+            <if test="emailBatchInfoBean.email_batch_status!=null and emailBatchInfoBean.email_batch_status !='' ">
+                ,AND EMAIL_BATCH_STATUS = #{emailBatchInfoBean.email_batch_status}
+            </if>
+    </select>
+
+    <select id="getEmailBatchinfoListAndWorkStatus"  resultMap="emailbatchinfobean" >
+        SELECT  a.*,
+                b.PLAN_DATE,
+                CASE b.PLAN_DATE
+		            WHEN CURDATE() THEN '1'
+		            WHEN NULL THEN '1'
+	            ELSE '0' END AS WORK_STATUS,
+	            b.PRIORITY
+        FROM EMAILS_BATCH_INFO a LEFT JOIN EMAILS_BATCH_CONTROL b
+        ON a.EMAIL_BATCH = b.EMAIL_BATCH ORDER BY b.PLAN_DATE
+    </select>
+
+
+
+    <update id="updateEmailBatchInfo" parameterType="com.speedmailbatch.EmailBatchInfoBean">
+        UPDATE EMAILS_BATCH_INFO
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="emailBatchInfoBean.email_batch_des!=null and emailBatchInfoBean.email_batch_des!='' ">
+                EMAIL_BATCH_DES = #{emailBatchInfoBean.email_batch_des},
+            </if>
+            <if test="emailBatchInfoBean.email_batch_count!=null">
+                EMAIL_BATCH_COUNT = #{emailBatchInfoBean.email_batch_count},
+            </if>
+            <if test="emailBatchInfoBean.email_batch_status!=null and emailBatchInfoBean.email_batch_status !='' ">
+                EMAIL_BATCH_STATUS = #{emailBatchInfoBean.email_batch_status}
+            </if>
+        </trim>
+        WHERE
+          EMAIL_BATCH =   #{emailBatchInfoBean.email_batch}
+    </update>
+</mapper>

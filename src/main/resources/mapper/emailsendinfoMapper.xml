@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.speedmailbatch.EmailSendInfoDao">
+    <resultMap id="emailsendaddrbean" type="com.speedmailbatch.EmailSendAddrBean">
+        <result column="EMAIL_ADDR" property="emailAddr" />
+        <result column="SEND_STATUS" property="emailSendStatus" />
+    </resultMap>
+
+    <!--目的：为Dao接口方法提供SQL语句-->
+    <select id="getSendAddrInfo"  resultMap="emailsendaddrbean" >
+
+        SELECT *
+          FROM EMAILS_SEND_TODAY
+        WHERE 1=1
+            <if test="emailSendAddrBean.emailAddr!=null and emailSendAddrBean.emailAddr!='' ">
+                AND EMAIL_ADDR = #{emailSendAddrBean.emailAddr}
+            </if>
+            <if test="emailSendAddrBean.emailSendStatus!=null and emailSendAddrBean.emailSendStatus!='' ">
+                ,AND SEND_STATUS = #{emailSendAddrBean.emailSendStatus}
+            </if>
+    </select>
+
+    <update id="updateEmailAddrInfo" parameterType="com.speedmailbatch.EmailSendAddrBean">
+        UPDATE EMAILS_SEND_TODAY
+        SET SEND_STATUS = '03'
+        WHERE EMAIL_ADDR = #{emailSendAddrBean.emailAddr} AND SEND_STATUS='00'
+    </update>
+
+
+</mapper>

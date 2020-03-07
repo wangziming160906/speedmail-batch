@@ -1,0 +1,21 @@
+java -jar /home/ec2-user/application/web/email-auto-web-1.0.0.jar
+java -jar /home/ec2-user/application/validate/email-auto-validate-1.0.0.jar
+java -jar /home/ec2-user/application/sendgrid/email-auto-sendgrid-1.0.0.jar
+java -jar /home/ec2-user/application/mailgun/email-auto-maingun-1.0.0.jar
+
+nohup java -jar /home/ec2-user/application/web/email-auto-web-20181126-1.0.0.jar > /home/ec2-user/application/log/web.log 2>&1
+nohup java -jar /home/ec2-user/application/validate/email-auto-validate-1.0.0.jar > /home/ec2-user/application/log/validate.log 2>&1
+nohup java -jar /home/ec2-user/application/sendemail/email-auto-sendemailsingle-20181202-1.0.0.jar > /home/ec2-user/application/log/sendemail.log 2>&1
+nohup java -jar /home/ec2-user/application/mailgun/email-auto-maingun-1.0.0.jar> /home/ec2-user/application/log/maingun.log 2>&1
+
+nohup java -jar /home/ec2-user/application/sendbatch/email-auto-sendemaibatch-20181129-1.0.0.jar > /home/ec2-user/application/log/sendbatch.log 2>&1
+
+nohup java -jar /home/ec2-user/application/sendemail/email-auto-sendemailsingle-20181202-1.0.0.jar> /home/ec2-user/application/log/maingun.log 2>&1
+
+scp -i /Users/wangshuai/工作/15-AWS/BosunMould.pem /Users/wangshuai/工作/15-AWS/email-auto-web-1.0.0.jar ec2-user@ec2-34-209-126-74.us-west-2.compute.amazonaws.com:/home/ec2-user/application/web
+
+http://ec2-34-209-126-74.us-west-2.compute.amazonaws.com:8080/index
+
+
+
+https://github.com/mgbq/nx-admin  git下载包
