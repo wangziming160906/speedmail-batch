@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.speedmailbatch</groupId>
-    <artifactId>speedmail</artifactId>
+    <artifactId>speedmail-batch</artifactId>
     <version>speedmailbatch-20190613-1.0.0</version>
     <packaging>jar</packaging>
 
