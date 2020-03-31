@@ -16,12 +16,6 @@ scp -i /home/wangshuai/liuyanyan.pem /mnt/d/4-Aws/jdk-8u191-linux-x64.tar.gz ec2
 ssh -i /home/wangshuai/aliyun-new.pem ec2-user@3.15.37.40
 aws用户:wangshuaiws820716@aliyun.com   主
 
-ssh -i /home/wangshuai/2016122419.pem ec2-user@13.57.207.199
-aws用户:2016122419@hhit.edu.cn  2019.3.2
-
-ssh -i /home/wangshuai/wangziming160906.pem ec2-user@13.57.209.52
-aws用户:wangziming160906@aliyun.com  2019.3.2
-
 ssh -i /home/wangshuai/hao062581840.pem ec2-user@3.134.243.31
 aws用户:hao062581840@163.com  2019.12
 
@@ -36,6 +30,12 @@ aws用户:deng8414174@163.com 2020.3.6
 
 
 ----------------------------------已停用----------------------------
+ssh -i /home/wangshuai/wangziming160906.pem ec2-user@13.57.209.52
+aws用户:wangziming160906@aliyun.com  2019.3.2 已停用
+
+ssh -i /home/wangshuai/2016122419.pem ec2-user@13.57.207.199
+aws用户:2016122419@hhit.edu.cn  2019.3.2  已停用
+
 ssh -i /home/wangshuai/liuyanyan-new.pem ec2-user@52.53.182.3
 aws用户:liuyanyanlyy@163.com   2018.11.15号注册   已停用
 
