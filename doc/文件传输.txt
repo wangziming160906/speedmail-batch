@@ -13,8 +13,8 @@ scp -i /home/wangshuai/liuyanyan.pem /mnt/d/4-Aws/jdk-8u191-linux-x64.tar.gz ec2
 
 
 ---------------------------正在使用7个------------------------------
-ssh -i /home/wangshuai/aliyun-new.pem ec2-user@3.15.37.40
-aws用户:wangshuaiws820716@aliyun.com   主
+ssh -i /home/wangshuai/aliyun-new.pem ec2-user@18.191.214.46
+aws用户:wangshuaiws820716@aliyun.com   2019.11 主
 
 ssh -i /home/wangshuai/hao062581840.pem ec2-user@3.134.243.31
 aws用户:hao062581840@163.com  2019.12
@@ -28,6 +28,13 @@ aws用户:githubwangshuai@aliyun.com  2020.3.5
 ssh -i deng8414174.pem ec2-user@54.153.92.77
 aws用户:deng8414174@163.com 2020.3.6
 
+ssh -i jin447430303.pem ec2-user@52.53.196.51
+aws用户:jin447430303@163.com 2020.4.4
+jin447430303@163.com----邮件密码 ouyan558.
+
+ssh -i xue363996298.pem ec2-user@13.57.17.196
+aws用户:xue363996298@163.com 2020.4.4
+xue363996298@163.com----邮件密码 caoju229
 
 ----------------------------------已停用----------------------------
 ssh -i /home/wangshuai/wangziming160906.pem ec2-user@13.57.209.52
@@ -64,6 +71,16 @@ scp -i /home/ec2-user/pem/liuyanyan-new.pem /home/ec2-user/java/jdk-8u191-linux-
 scp -i /home/ec2-user/pem/liuyanyan-new.pem /home/ec2-user/java/jdk-8u191-linux-i586.tar.gz ec2-user@52.53.182.3:/home/ec2-user/java/
 scp -i /home/ec2-user/pem/liuyanyan-new.pem /home/ec2-user/application/sendemail/email-auto-sendemailsingle-20181202-1.0.0.jar ec2-user@52.53.182.3:/home/ec2-user/application/sendemail/
 scp -i /home/wangshuai/liuyanyan-aliyun.pem /home/wangshuai/2016120225.pem ec2-user@54.241.129.189:/home/ec2-user/pem
+
+scp -i wangshuaiziming.pem  xue363996298@163.com ec2-user@18.225.32.41:/home/ec2-user/pem/
+
+scp -i ./pem/xue363996298.pem application.tar.gz ec2-user@13.57.17.196:/home/ec2-user/
+scp -i ./pem/xue363996298.pem java.tar.gz ec2-user@13.57.17.196:/home/ec2-user/
+
+export JAVA_HOME=/home/ec2-user/java/jdk1.8.0_191
+export JRE_HOME=$JAVA_HOME/jre
+export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib
+export PATH=$JAVA_HOME/bin:$PATH
 
 scp -i /home/wangshuai/liuyanyan-aliyun.pem /home/wangshuai/wangziming160906.pem ec2-user@54.241.129.189:/home/ec2-user/pem
 
