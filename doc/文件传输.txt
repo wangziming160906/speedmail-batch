@@ -61,6 +61,8 @@ ssh -i /home/wangshuai/aliyun.pem ec2-user@54.245.220.182
 aws用户:wangshuaiws0716@aliyun.com  已停用
 -----------------------------------------------------------------------
 
+update email_apikey_info set APIKEY_STATUS ='01' WHERE API_KEY = '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';
+update email_apikey_info set APIKEY_STATUS ='00' WHERE API_KEY != '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';
 
 nohup java -jar /home/ec2-user/application/sendemail/email-auto-sendemailsingle-20181202-1.0.0.jar > /home/ec2-user/application/log/sendemail.log 2>&1 &
 nohup java -jar /home/ec2-user/application/sendbatch/email-auto-sendemaibatch-20181129-1.0.0.jar > /home/ec2-user/application/log/sendbatch.log 2>&1 &
