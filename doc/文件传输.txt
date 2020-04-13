@@ -104,5 +104,3 @@ nohup java -jar /home/ec2-user/application/web/email-auto-web-20190203-1.0.0.jar
 nohup java -jar /home/ec2-user/application/sendbatch/email-auto-sendemaibatch-20190207-1.0.0.jar > /home/ec2-user/application/log/sendbatch.log 2>&1 &
 
 yan0070060@163.com----jiyue6393   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
-
-
