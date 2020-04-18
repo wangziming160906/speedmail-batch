@@ -329,8 +329,6 @@ public class EmailAppForCloudEmailBatch{
                             emailDbOperateForSend.upDateEmailForRes(emaiinfoArrdRes.get("EMAIL_ADDR").toString());
                         }
 
-
-
                     }
                 }
             }
