@@ -13,7 +13,7 @@ scp -i /home/wangshuai/liuyanyan.pem /mnt/d/4-Aws/jdk-8u191-linux-x64.tar.gz ec2
 
 
 ---------------------------正在使用7个------------------------------
-ssh -i /home/wangshuai/aliyun-new.pem ec2-user@18.217.25.127
+ssh -i /home/wangshuai/aliyun-new.pem ec2-user@18.216.171.154
 aws用户:wangshuaiws820716@aliyun.com   2019.11 主
 
 ssh -i /home/wangshuai/hao062581840.pem ec2-user@3.134.243.31
